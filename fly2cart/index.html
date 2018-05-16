@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="fly2cart.css" />
+  <script src="fly2cart.js"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  <div class="cart">
+    <div class="placeHolderDiv"></div>
+    <div class="shopCart" id="shopCart">购物车</div>
+  </div>
+
+  <div class="addBtn">
+    <button onclick="add2cart()" id="addBtn">添加购物车</button>
+    <div class="flag" id="flag">1</div>
+  </div>
+  <script>
+    // $(document).ready(function(){
+    //   var width=$("#shopCart").getBoundingClientRect().left + $(document).scrollLeft()
+    //   console.log('width'+width)
+    // });
+    function add2cart(){
+      var shopCart=document.getElementById("shopCart");
+      var endY=shopCart.getBoundingClientRect().top+shopCart.clientHeight/2
+      var endX=shopCart.getBoundingClientRect().left
+      var addBtn=document.getElementById("addBtn");
+      var startY=addBtn.getBoundingClientRect().top-addBtn.clientHeight
+      var startX=addBtn.getBoundingClientRect().left+addBtn.clientWidth/2-10
+      
+      var style=document.createElement('style')
+      style.type='text/css'
+      var keyFrames='\
+      @keyframes fly2Cart {\
+          0% {left: startX;top: startY;}\
+          100% {left: endX;top: endY;}\
+      }\
+      @-webkit-keyframes fly2Cart {\
+          0% {left: startX;top: startY;}\
+          100% {left: endX;top: endY;}\
+      }';
+      var reg1=new RegExp('startX','g')
+      var reg2=new RegExp('startY','g')
+      var reg3=new RegExp('endX','g')
+      var reg4=new RegExp('endY','g')
+      keyFrames=keyFrames.replace(reg1,startX+"px")
+      keyFrames=keyFrames.replace(reg2,startY+"px")
+      keyFrames=keyFrames.replace(reg3,endX+"px")
+      keyFrames=keyFrames.replace(reg4,endY+"px")
+
+      style.innerHTML=keyFrames   
+
+      document.getElementsByTagName('head')[0].appendChild(style);
+      // style.innerHTML=''
+      // document.getElementsByTagName('head')[0].appendChild(style);
+      // var tempStyleSheet=document.styleSheets[document.styleSheets.length-1]
+      // console.log(tempStyleSheet)
+      //  try {
+      //   tempStyleSheet.insertRule( keyFrames , 0);
+      //   } catch (e){
+      //     console.log(e)
+      // };
+
+      var flagBubb=document.getElementById("flag")
+      flagBubb.style.display="block"
+      flagBubb.style.setProperty("animation","fly2Cart 1s ease")
+      setTimeout(function(){
+        flagBubb.style.display="none"
+      },1000); 
+    }
+  </script>
+</body>
+</html>

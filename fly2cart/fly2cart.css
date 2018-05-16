@@ -1,0 +1,54 @@
+.cart{
+  height: 420px;
+  margin-bottom: 20px;
+  position: fixed;
+  right: 0.1%;
+  width: 40px;
+  z-index: 250;
+  top: 50%;
+  margin-top: -210px;
+}
+
+.placeHolderDiv{
+  height: 334px;
+  position: relative;
+  background-color: aquamarine
+}
+.shopCart{
+  cursor: pointer;
+  width: 40px;
+  height: 86px;
+  background:red;
+  border-radius: 2px 0px 0px 2px;
+}
+.addBtn{
+  position: fixed;
+  left: 700px;
+  top: 650px;
+}
+.flag{
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: pink;
+  position: fixed;
+  left: 729px;
+  top: 630px;
+  z-index: 100px;
+  display: none;
+}
+
+/* @keyframes fly2Cart
+{
+0%   {left: 730px;top:630px;}
+100%   {left: 1302px;top:540px;}
+}
+
+
+
+@-webkit-keyframes fly2Cart
+{
+  0%   {left: 730px;top:630px;}
+  100%   {left: 1302px;top:540px;}
+} */
