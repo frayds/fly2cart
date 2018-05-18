@@ -1,3 +1,4 @@
+/* 购物车整体样式 */
 .cart{
   height: 420px;
   margin-bottom: 20px;
@@ -9,11 +10,14 @@
   margin-top: -210px;
 }
 
+/* 绿色占位符样式 */
 .placeHolderDiv{
   height: 334px;
   position: relative;
   background-color: aquamarine
 }
+
+/* 购物车样式 */
 .shopCart{
   cursor: pointer;
   width: 40px;
@@ -21,34 +25,23 @@
   background:red;
   border-radius: 2px 0px 0px 2px;
 }
+
+/* 添加按钮样式 */
 .addBtn{
   position: fixed;
-  left: 700px;
+  left: 1000px;
   top: 650px;
 }
+
+/* 飞行物体样式 */
 .flag{
   height: 20px;
   width: 20px;
   line-height: 20px;
   text-align: center;
-  background-color: pink;
   position: fixed;
   left: 729px;
   top: 630px;
   z-index: 100px;
-  display: none;
+  background-image: url(./logo.png);
 }
-
-/* @keyframes fly2Cart
-{
-0%   {left: 730px;top:630px;}
-100%   {left: 1302px;top:540px;}
-}
-
-
-
-@-webkit-keyframes fly2Cart
-{
-  0%   {left: 730px;top:630px;}
-  100%   {left: 1302px;top:540px;}
-} */
