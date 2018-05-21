@@ -26,9 +26,6 @@ $(document).ready(function(){
   $("#addBtn").click(function(){
     //防止多次点击按钮
     $(this).attr("disabled","true")
-    var timer = setTimeout(function () {  
-      $("#addBtn").removeAttr("disabled");
-    },500);
 
     //初始化飞行小球
     var flagDiv=$('<div></div>')
@@ -52,6 +49,7 @@ $(document).ready(function(){
       vertex_Rtop: 1,
       onEnd:function(){
         $('#flag').remove()
+        $("#addBtn").removeAttr("disabled");
       }
     })
   })
